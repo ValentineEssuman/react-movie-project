@@ -15,8 +15,7 @@ const Header = () => {
             </Content>
     </Wrapper> 
     );
-   
-    
+     
 }
 
 export default Header;
