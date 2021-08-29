@@ -1,16 +1,11 @@
 import React  from 'react';
 
-import { Wrapper, Content, Text}  from './HeroImage.styles';
+import { Image }  from './Thumb.styles';
 
-const  HeroImage = ({ image, title, text })=> (
-    <Wrapper image={image}>
-        <Content>
-            <Text>
-                <h1>{title}</h1>
-                <p>{text}</p>
-            </Text>
-        </Content>
-    </Wrapper>
+const Thumb = ({image, movieId, clicker})=> (
+    <div>
+        <Image src={image} alt='movie-thumb' />
+    </div>
 );
 
-export default HeroImage;
+export default Thumb;
