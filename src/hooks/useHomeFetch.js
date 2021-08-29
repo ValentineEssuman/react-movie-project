@@ -11,7 +11,7 @@ const initialState = {
 
 };
 
-export const useHomeFetch = ()=> {
+const useHomeFetch = ()=> {
     const [state, setState ] = useState(initialState);
     const [loading, setLoading ] = useState(false);
     const [error, setError ] = useState(false);
@@ -41,4 +41,6 @@ export const useHomeFetch = ()=> {
 
     return { state, loading, error};
 
-}
+};
+
+export default useHomeFetch;
