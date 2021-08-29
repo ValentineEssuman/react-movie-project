@@ -7,7 +7,7 @@ import API from '../API';
 
 //components
 import HeroImage from '../components/HeroImage/';
-
+import Grid from '../components/Grid';
 //hooks
 import useHomeFetch  from '../hooks/useHomeFetch';
 
@@ -51,8 +51,6 @@ const Home = () => {
 
     return (
         <>
-        
-
             {state.results[0] ? (
                 <HeroImage 
                         image={`${IMAGE_BASE_URL}${BACKDROP_SIZE}${state.results[0].backdrop_path}`}
@@ -60,6 +58,11 @@ const Home = () => {
                         text = {state.results[0].overview}
                 />
             ) : null } 
+            <Grid header={`Popular Movies`}>
+                {state.results.map( movie =>(
+                    <div key={movie.id}>{movie.title}</div>
+                ))}
+            </Grid>
         </>
     );
 };
