@@ -1,52 +1,28 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 
 //config
 import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config';
+
 //API
 import API from '../API';
 
 //components
 import HeroImage from '../components/HeroImage/';
 import Grid from '../components/Grid';
+import Thumb from '../components/Thumb';
+import Spinner  from './Spinner';
+
 //hooks
 import useHomeFetch  from '../hooks/useHomeFetch';
 
 //images
-import NoImage from '../images/no_image.jpg'
-
+import NoImage  from '../images/noimage.jpg';
+console.log('NoImage',NoImage);
 
 
 
 const Home = () => {
-    // const [state, setState ] = useState();
-    // const [loading, setLoading ] = useState(false);
-    // const [error, setError ] = useState(false);
-
-    // const fetchMoviez = async (page, searchTerm="") => {
-    //     try{
-    //         setError(false);
-    //         setLoading(true);
-    //         console.log("working?")
-    //         const movies = await API.fetchMovies(searchTerm, page);
-    //         //console.log(movies);
-    //         setState(prev =>({
-    //             ...movies, 
-    //             results:
-    //                 page > 1 ? [...prev.results, ...movies.results] : [...movies.results]
-    //         }));
-           
-    //     }catch(error){
-    //         setError(true);
-    //     }
-    //     setLoading(false);
-    // };
-
-    // useEffect(() => {
-    //     fetchMoviez(1)
-    // }, [])
-    
     const { state, loading, error } = useHomeFetch();
-    
     console.log(state);
 
     return (
@@ -60,9 +36,22 @@ const Home = () => {
             ) : null } 
             <Grid header={`Popular Movies`}>
                 {state.results.map( movie =>(
-                    <div key={movie.id}>{movie.title}</div>
+
+                    <Thumb 
+                        key={movie.id}
+                        clicker
+                        image = {movie.poster_path ?
+                            IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+                            : NoImage
+                        }
+                        movieId={movie.id}
+ 
+                    />
+                    
+                    // <div key={movie.id}>{movie.title}</div>
                 ))}
             </Grid>
+            <Spinner/>
         </>
     );
 };
