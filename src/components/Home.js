@@ -6,7 +6,8 @@ import { POSTER_SIZE, BACKDROP_SIZE, IMAGE_BASE_URL } from '../config';
 import API from '../API';
 
 //components
-import HeroImage from '../components/HeroImage/';
+import HeroImage from '../components/HeroImage';
+import SearchBar from '../components/SearchBar';
 
 //hooks
 import useHomeFetch  from '../hooks/useHomeFetch';
@@ -17,35 +18,13 @@ import NoImage from '../images/no_image.jpg'
 
 
 
+
 const Home = () => {
     // const [state, setState ] = useState();
     // const [loading, setLoading ] = useState(false);
     // const [error, setError ] = useState(false);
-
-    // const fetchMoviez = async (page, searchTerm="") => {
-    //     try{
-    //         setError(false);
-    //         setLoading(true);
-    //         console.log("working?")
-    //         const movies = await API.fetchMovies(searchTerm, page);
-    //         //console.log(movies);
-    //         setState(prev =>({
-    //             ...movies, 
-    //             results:
-    //                 page > 1 ? [...prev.results, ...movies.results] : [...movies.results]
-    //         }));
-           
-    //     }catch(error){
-    //         setError(true);
-    //     }
-    //     setLoading(false);
-    // };
-
-    // useEffect(() => {
-    //     fetchMoviez(1)
-    // }, [])
     
-    const { state, loading, error } = useHomeFetch();
+    const { state, loading, error, setSearchTerm } = useHomeFetch();
     
     console.log(state);
 
@@ -60,6 +39,8 @@ const Home = () => {
                         text = {state.results[0].overview}
                 />
             ) : null } 
+
+            <SearchBar setSerachTerm={setSearchTerm}/>
         </>
     );
 };
