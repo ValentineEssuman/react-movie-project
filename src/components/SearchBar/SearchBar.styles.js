@@ -30,13 +30,13 @@ export const Content  = styled.div`
     }
 
     input {
+        font-size: var(--fontBig);
         position: relative;
-        left: 15px;
+        left: 25px;
         margin: 8px 0;
         border: 0;
         width:  80%;
         height: 30px;
-    
         border: 0;
         color: var(--white);
         background: transparent;
