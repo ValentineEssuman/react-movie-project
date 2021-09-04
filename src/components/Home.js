@@ -24,14 +24,13 @@ console.log('NoImage',NoImage);
 
 const Home = () => {
 
-    // const [state, setState ] = useState();
-    // const [loading, setLoading ] = useState(false);
-    // const [error, setError ] = useState(false);
-    
-    const { state, loading, error, searchTerm, setSearchTerm } = useHomeFetch();
+
+    const { state, loading, error, searchTerm, setSearchTerm, isLoadingMore, setIsLoadingMore } = useHomeFetch();
     
     console.log(state);
-
+    if (error) return <div>Something Went Wrong</div>;
+    
+   
     return (
         <>
             {!searchTerm && state.results[0] ? (
@@ -60,7 +59,7 @@ const Home = () => {
             
             {loading ? <Spinner/>: null}
             { state.page < state.total_pages && !loading && (
-                <Button text='Load More'/>
+                <Button text='Load More' callback={() => setIsLoadingMore(true)} />
             )}
 
         </>

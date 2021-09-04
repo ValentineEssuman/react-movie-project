@@ -14,9 +14,20 @@ export const Wrapper  = styled.div`
     outline: none;
     cursor: pointer;
     color: var(--white);
-    top: 15px;
-    left: 10px;
+    
     :hover {
         opacity: 0.8; 
     }
+`;
+
+export const Text  = styled.div`
+    background: transparent;
+    display: block;
+    min-width: 100px;
+    text-align: center;
+    margin: auto;
+    padding: 15px;
+    
+
+
 `;
