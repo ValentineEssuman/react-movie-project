@@ -18,11 +18,21 @@ export const useMovieFetch = movieId => {
                 setLoading(true);
                 setError(false);
 
-                const movie = API.fetchMovie(movieId);
-                const credits = API.fetchCredits(movieId);
-                //c
-                const directors = credits.crew.filter( person => person.job ==='Director');
+                console.log("loading", loading);
+                console.log("error", error); 
+                console.log("loading", loading);
 
+                const movie = await API.fetchMovie(movieId);
+                const credits = await API.fetchCredits(movieId);
+                console.log("Movie details", credits.actors);
+
+                console.log("movie", movie);
+                console.log("credits", credits); 
+                console.log("loading", loading);
+                //c
+            
+                const directors = credits.crew.filter( person => person.job ==='Director');
+                console.log("directors", directors);
                 setState({
                     ...movie,
                     actors: credits.cast,
@@ -31,7 +41,8 @@ export const useMovieFetch = movieId => {
                 setLoading(false);
 
             } catch (error) {
-              setError(true);
+                console.log(error.message)
+                setError(true);
             }
         };
 

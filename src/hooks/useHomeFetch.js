@@ -62,7 +62,7 @@ const useHomeFetch = ()=> {
         console.log("loading", loading);
         console.log("state page", state.page);
         setIsLoadingMore(false);
-    },[isLoadingMore, searchTerm, state.page])
+    },[error, loading, isLoadingMore, searchTerm, state.page])
 
     return { state, loading, error, searchTerm, setSearchTerm, isLoadingMore, setIsLoadingMore};
 

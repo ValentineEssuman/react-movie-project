@@ -24,7 +24,6 @@ console.log('NoImage',NoImage);
 
 const Home = () => {
 
-
     const { state, loading, error, searchTerm, setSearchTerm, isLoadingMore, setIsLoadingMore } = useHomeFetch();
     
     console.log(state);
