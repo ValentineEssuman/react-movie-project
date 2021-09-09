@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Wrapper = styled.div`
-    background-color: brown;
+    background-color: gray;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,7 +11,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-    background-color: orange;
+    background-color: gray;
     display: flex;
     width: 100%;
     padding 0 20px;
