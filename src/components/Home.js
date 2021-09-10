@@ -44,11 +44,11 @@ const Home = () => {
             <Grid header={searchTerm ? `Search Result`:`Popular Movies`}>
                 {state.results.map( movie =>(
                     <Thumb 
-                    key={movie.id}
-                    clicker
-                    image = {movie.poster_path ?
-                        IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
-                        : NoImage
+                        key={movie.id}
+                        clicker
+                        image = {movie.poster_path ?
+                            IMAGE_BASE_URL + POSTER_SIZE + movie.poster_path
+                            : NoImage
                     }
                     movieId={movie.id}
                     />
