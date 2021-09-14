@@ -14,6 +14,7 @@ import { useMovieFetch } from '../hooks/useMovieFetch';
 
 //images
 import NoImage from '../images/noimage.jpg';
+import InfoBar from './InfoBar';
 
 const Movie = () => {
 
@@ -26,6 +27,12 @@ const Movie = () => {
     return(
         <>
             <BreadCrumb movieTitle={ movie.original_title } />
+            <InfoBar  
+                time={movie.runtime}
+                budget={movie.budget}
+                revenue={movie.revenue}
+            
+            />
             <Grid header ='Actor'>
                 {movie.actors
                     .map(actor => (
