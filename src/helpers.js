@@ -11,5 +11,10 @@ export const convertMoney = money => {
     currency: 'USD',
     minimumFractionDigits: 0,
   });
-  return formatter.format(money);
+  return formatter.format(money); 
+};
+
+export const isPersistedState = stateName => {
+  const sessionState = sessionStorage.getItem(stateName);
+  return sessionState && JSON.parse(sessionState);
 };
