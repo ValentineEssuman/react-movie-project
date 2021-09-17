@@ -12,8 +12,6 @@ import SearchBar from '../components/SearchBar';
 //hooks
 import useHomeFetch  from '../hooks/useHomeFetch';
 
-//images
-import NoImage from '../images/no_image.jpg'
 
 
 
