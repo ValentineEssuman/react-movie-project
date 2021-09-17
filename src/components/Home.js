@@ -38,7 +38,7 @@ const Home = () => {
                 />
             ) : null } 
 
-            <SearchBar setSerachTerm={setSearchTerm}/>
+            <SearchBar setSearchTerm={setSearchTerm}/>
         </>
     );
 };
