@@ -119,6 +119,10 @@ class Home extends Component {
 
     handleLoadMore = () => this.fetchMoviez(this.state.movies.page + 1, this.state.searchTerm);
     
+    componentDidMount() {
+        this.fetchMoviez(1);
+
+    }
     render() {
         const { movies, loading, error, searchTerm } = this.state;
         
